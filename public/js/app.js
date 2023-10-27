@@ -10,9 +10,8 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Sedang mencari lokasi...';
     messageTwo.textContent = '';
 
-    fetch('http://localhost:3000/infocuaca?address=' + location)
-        .then(response => response.json())
-        .then(data => {
+    fetch('infocuaca?address=' + location).then((response)=>{
+        response.json().then((data)=>{
             if (data.error) {
                 messageOne.textContent = data.error;
             } else {
@@ -20,4 +19,5 @@ weatherForm.addEventListener('submit', (e) => {
                 messageTwo.textContent = data.prediksiCuaca;
             }
         });
+    });
 });
