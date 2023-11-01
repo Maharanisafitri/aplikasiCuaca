@@ -1,16 +1,553 @@
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>Tentang Saya</title>
     <link rel="icon" href="/img/cuaca.png">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/app.js"></script>
+   @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
 </head>
+
+
+
 <body>
-    <div class="main-content">
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #000000, #f9b3ff);
+        }
+
+        .wrapper {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .resume {
+            width: 100%;
+            background: #fff;
+            margin: 25px auto;
+            display: flex;
+        }
+
+        .left {
+            background: #292b2f;
+            width: 250px;
+            padding: 0 20px;
+        }
+
+        .right {
+            width: calc(100% - 250px);
+        }
+
+        .left .img_holder {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .left .img_holder img {
+            width: 200px;
+            border-radius: 30px;
+        }
+
+        .pb {
+            padding-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            padding-bottom: 10px;
+            color: #cdc8ef;
+            position: relative;
+            text-align: right;
+            margin-bottom: 15px;
+        }
+
+        .title:before {
+            content: "";
+            position: absolute;
+            top: 35px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: #ccc7f3;
+        }
+
+        .left .icon {
+            font-size: 20px;
+            color: #9153c9;
+        }
+
+        .left .text {
+            color: #9153c9;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .contact .li_wrap {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .contact .li_wrap .icon {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .contact .li_wrap .text {
+            width: calc(100% - 50px);
+            word-break: break-word;
+            color: #fff;
+        }
+
+        .skills ul,
+        .hobbi ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .skills .li_wrap,
+        .hobbi .li_wrap {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skills .li_wrap {
+            background: #fff;
+        }
+
+        .skills .li_wrap .text,
+        .hobbi .li_wrap .text {
+            margin-top: 5px;
+        }
+
+        .hobbi .li_wrap {
+            border: 2px solid #fff;
+        }
+
+        .hobbi .li_wrap .icon,
+        .hobbi .li_wrap .text {
+            color: #fff;
+        }
+
+        .hobbies .li_wrap:hover {
+            background: #fff;
+        }
+
+        .hobbi .li_wrap:hover .icon,
+        .hobbi .li_wrap:hover .text {
+            color: #9153c9;
+        }
+
+        .header {
+            background: #292b2f;
+            padding: 15px 30px;
+            color: #fff;
+            height: 240px;
+        }
+
+        .header .name {
+            font-size: 52px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #c6c3dc;
+        }
+
+        .header .role {
+            font-weight: 300;
+            font-size: 20px;
+        }
+
+        .header .about { 
+            margin-top: 20px;
+            line-height: 26px;
+        }
+
+        .right_inner {
+            padding: 30px;
+            color: #292b2f;
+        }
+
+        .right_inner .education {
+            margin-top: 30px;
+        }
+
+        .right_inner .li_wrap {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .right_inner .li_wrap .date {
+            width: 125px;
+            color: #9153c9;
+        }
+
+        .right_inner .li_wrap .info {
+            width: calc(100% - 125px);
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .right_inner .li_wrap .info_title {
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #9153c9;
+        }
+
+        .right_inner .li_wrap .info_com {
+            font-weight: 300;
+            font-size: 14px;
+            margin-top: 3px;
+        }
+
+        .right_inner .li_wrap .info_cont {
+            margin-top: 15px;
+        }
+
+        .right_inner .li_wrap .info:before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background: #9153c9;
+            border-radius: 50%;
+        }
+
+        .right_inner .li_wrap .info:after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 4px;
+            width: 2px;
+            height: 90%;
+            background: #9153c9;
+        }
+    </style>
+    <div class="wrapper">
+        <!-- Rest of your HTML content -->
+    </div>
+</body>
+
+</html>
+        <div class="main-content">
         {{>header}}
-        <img class="portrait" src="/img/Natasya febriani-21343010.png">
+        <div class="content-wrapper">
+<body>
+
+
+
+    <div class="wrapper">
+        <div class="resume">
+            <div class="left">
+                <div class="img_holder">
+                    <img src="img/rani.png" alt="picture">
+                </div>
+                <div class="contact_wrap pb">
+                    <div class="title">
+                        Contact
+                    </div>
+                    <div class="contact">
+                        <ul>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
+                                    <div class="text">082382855828</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                                    <div class="text">maharanisafitri.112@gmail.com</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fab fa-weebly" aria-hidden="true"></i></div>
+                                    <div class="text">www.maharani Safitri.com</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fas fa-map-signs" aria-hidden="true"></i></div>
+                                    <div class="text">01-desember-2002, solok</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skills_wrap pb">
+                    <div class="title">
+                        Skill
+                    </div>
+                    <div class="skills">
+                        <ul>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fab fa-html5"></i></div>
+                                    <div class="text">HTML</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fab fa-css3-alt"></i></div>
+                                    <div class="text">CSS</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fab fa-js"></i></div>
+                                    <div class="text">Javascript</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fab fa-react"></i></div>
+                                    <div class="text">UI/UX</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hobbi_wrap pb">
+                    <div class="title">
+                        Hobbi
+                    </div>
+                    <div class="hobbi">
+                        <ul>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fas fa-book"></i></div>
+                                    <div class="text">Reading</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fas fa-music"></i></div>
+                                    <div class="text">Music</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fas fa-gamepad"></i></div>
+                                    <div class="text">badminton</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="li_wrap">
+                                    <div class="icon"><i class="fas fa-tree"></i></div>
+                                    <div class="text">traveling</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="header">
+                    <div class="name_role">
+                        <div class="name">
+                            Maharani Safitri
+                        </div>
+                        <div class="role">
+                        Data analyst
+                        </div>
+                    </div>
+                    <div class="about">
+                        Maharani Safitri, Mahasiswi Informatika dari Universitas Negeri Padang, telah mencapai semester 4 dengan
+                        keahlian dalam organisasi, manajemen waktu, kerjasama tim, komunikasi, serta analisis dan pemecahan
+                        masalah . Saya memiliki antusiasme dan dedikasi yang tinggi dalam bidang UI/UX dan FrontEnd Development, dengan keterampilan dalam HTML, CSS, JavaScript, dan desain grafis menggunakan
+                        Adobe Photoshop.
+
+                    </div>
+                </div>
+                <div class="right_inner">
+                    <div class="exp">
+                        <div class="title">
+                       Pendidikan
+                        </div>
+                        <div class="education_wrap">
+                            <ul>
+                                <li>
+                                    <div class="li_wrap">
+                                        <div class="date">
+                                            Juli 2018 – Juni 2021
+                                        </div>
+                                        <div class="info">
+                                            <p class="info_title">
+                                                IPA2
+                                            </p>
+                                            <p class="info_com">
+                                                SMA N 1 JUNJUNG SIRIH
+                                            </p>
+                                            <p class="info_cont">
+                                                • Pernah mengikuti ektrakurikuler dibidang seni lebih spesifiknya dibidang Tari
+                                                </p>
+                                                • Mengikuti lomba olimpiade fisika tingkat Kabupaten/Kota
+                                                </p>
+                                                • Nilai Akhir 91.00
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_wrap">
+                                        <div class="date">
+                                            Agustus 2021 - Sekarang
+                                        </div>
+                                        <div class="info">
+                                            <p class="info_title">
+                                                Informatika
+                                            </p>
+                                            <p class="info_com">
+                                            UNIVERSITAS NEGERI PADANG 
+                                            </p>
+                                            <p class="info_cont">
+                                                • Program studi Informatika
+                                                 </p>
+                                                • Mengerjakan projek berbasis Web design,Aplikasi Desktop,merancang Database
+                                                 </p>
+                                                • Menggeluti bidang Data Science dan sangat tertarik pada bidang Data analyst
+                                                 </p>
+                                                • Membuat beberapa projek berbasis UI/UX
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_wrap">
+                                        <div class="date">
+                                            2025 - 2027
+                                        </div>
+                                        <div class="info">
+                                            <p class="info_title">
+                                                S2 Informatika
+                                            </p>
+                                            <p class="info_com">
+                                                Insyallah
+                                            </p>
+                                            <p class="info_cont">
+                                                allahumma sholli ala sayyidina muhammad wa ala ali sayyidina muhammad 
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="education">
+                        <div class="title">
+                            Pengalaman organisasi
+                        </div>
+                        <div class="education_wrap">
+                            <ul>
+                                <li>
+                                    <div class="li_wrap">
+                                        <div class="date">
+                                            September 2022 – Sekarang
+                                        </div>
+                                        <div class="info">
+                                            <p class="info_title">
+                                                Departemen Komunikasi
+                                            </p>
+                                            <p class="info_com">
+                                               FORMIS FT
+                                            </p>
+                                            <p class="info_cont">
+                                                • Bertanggung jawab dalam pembuatan materi desain komunikasi untuk FORMIS FT, termasuk pamflet,
+                                                  logo, poster, spanduk, dan materi visual lainnya.
+                                            </p>
+                                                • Mengimplementasikan prinsip desain UI/UX yang efektif untuk meningkatkan daya tarik visual dan
+                                                  pengalaman pengguna 
+                                             </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_wrap">
+                                        <div class="date">
+                                           Januari 2023 – Sekarang
+                                        </div>
+                                        <div class="info">
+                                            <p class="info_title">
+                                               Public Relations
+                                            </p>
+                                            <p class="info_com">
+                                                Infinite Technology
+                                            </p>
+                                            <p class="info_cont">
+                                                • Mengelola akun media sosial Infinite Technology di berbagai platform seperti Instagram, Facebook,
+                                                  YouTube, TikTok, dan sebagainya.
+                                             </p>
+                                                • Menghasilkan konten kreatif dan menarik untuk mengisi feed di setiap platform, serta merancang
+                                                  pamflet, spanduk, brosur, dan materi informasi lainnya.
+                                             </p>
+                                                • Memastikan pesan dan informasi disampaikan dengan jelas dan efektif kepada audiens target.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_wrap">
+                                        <div class="date">
+                                           Januari 2022- Sekarang
+                                        </div>
+                                        <div class="info">
+                                            <p class="info_title">
+                                               Departemen Kominfo
+                                            </p>
+                                            <p class="info_com">
+                                                IPPCP
+                                            </p>
+                                            <p class="info_cont">
+                                                • Bertanggung jawab dalam pembuatan konten informatif yang ditujukan kepada seluruh anggota
+                                                  organisasi.
+                                            </p>
+                                                • Mengimplementasikan desain UI/UX yang menarik untuk memvisualisasikan informasi secara efektif
+                                                  dan mudah dipahami.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     {{>footer}}
 </body>
+
 </html>

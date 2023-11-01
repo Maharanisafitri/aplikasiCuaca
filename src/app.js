@@ -21,7 +21,7 @@ app.use(express.static(direktoriPublic));
 app.get('', (req, res) => {
     res.render('index', {
         judul: 'Aplikasi Cek Cuaca',
-        nama: 'Natasya febriani'
+        nama: 'Maharani Safitri'
     });
 });
 
@@ -31,6 +31,21 @@ app.get('/bantuan', (req, res) => {
         judul: 'Halaman Bantuan',
         teks: 'Ini adalah halaman bantuan',
         teksBantuan: 'Ini adalah teks bantuan'
+    });
+});
+
+// Ini halaman berita
+app.get('/berita', (req, res) => {
+    res.render('berita', {
+        judul: 'Halaman Berita',
+        berita1: {
+            judul: 'Peresmian Gedung Baru',
+            isi: 'Pada hari ini, gedung baru perusahaan kami resmi diresmikan oleh CEO kami. Gedung ini dilengkapi dengan fasilitas modern dan teknologi terkini yang diharapkan dapat meningkatkan produktivitas dan kenyamanan bagi seluruh karyawan.'
+        },
+        berita2: {
+            judul: 'Peluncuran Produk Baru',
+            isi: 'Kami dengan bangga mengumumkan peluncuran produk terbaru kami, yaitu smartphone generasi terbaru yang dilengkapi dengan teknologi canggih dan fitur inovatif. Produk ini dirancang untuk memberikan pengalaman pengguna yang lebih baik dan memenuhi kebutuhan teknologi saat ini.'
+        }
     });
 });
 
@@ -62,22 +77,24 @@ app.get('/infocuaca', (req, res) => {
 app.get('/tentang', (req, res) => {
     res.render('tentang', {
         judul: 'Tentang Saya',
-        nama: 'Natasya febriani'
+        nama: 'Maharani Safitri'
     });
 });
 
 app.get('/bantuan/*', (req, res) => {
     res.render('404', {
         judul: '404',
-        nama: 'Natasya febriani',
+        nama: 'Maharani Safitri',
         PesanKesalahan: 'Artikel yang dicari tidak ditemukan.'
     })
 })
 
+
+
 app.get('*', (req, res) => {
     res.render('404', {
         judul: '404',
-        nama: 'Natasya febriani',
+        nama: 'Maharani Safitri',
         pesanKesalahan: 'Halaman tidak ditemukan.'
     })
 })

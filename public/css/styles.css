@@ -1,13 +1,15 @@
 body {
-    color: #333333;
-    font-family: arial;
+    color: #888888;
+    font-family: Arial, sans-serif;
     max-width: 650px;
     margin: 0 auto;
     padding: 0 16px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #333333;
 }
+
 
 .main-content {
     flex-grow: 1;
@@ -18,16 +20,19 @@ footer {
     border-top: 1px solid #eeeeee;
     margin-top: 16px;
     padding: 16px 0;
+    text-align: center; /* Pusatkan teks pada footer */
 }
 
 header {
     margin-top: 16px;
     margin-bottom: 48px;
+    text-align: center; /* Pusatkan teks pada header */
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 36px; /* Mengurangi ukuran font agar tidak terlalu besar */
     margin-bottom: 16px;
+    text-align: center; /* Pusatkan teks judul */
 }
 
 header a {
@@ -37,18 +42,25 @@ header a {
 }
 
 .portrait {
-    width: 250px;
+    display: block; /* Membuat gambar menjadi elemen blok untuk menghindari masalah layout */
+    margin: 0 auto; /* Pusatkan gambar secara horizontal */
+    max-width: 100%; /* Pastikan gambar tidak melebihi lebar container */
 }
 
 input {
     border: 2px solid #cccccc;
     padding: 8px;
-  }
-  
-  button {
+    width: 100%; /* Isi lebar input agar sesuai dengan container */
+    margin-bottom: 10px; /* Tambahkan jarak di bawah input */
+}
+
+button {
     cursor: pointer;
-    border-radius: 0px;
+    border: none; /* Hapus border untuk memperbaiki tampilan tombol */
+    border-radius: 5px; /* Tambahkan sedikit border-radius pada tombol */
     background-color: #cccccc;
     color: white;
-    padding: 9px;
-  }
+    padding: 10px 20px; /* Sedikit peningkatan ukuran padding untuk tombol */
+    width: auto; /* Biarkan tombol mengatur lebar sendiri */
+    margin: 10px 0; /* Tambahkan jarak di atas dan di bawah tombol */
+}
